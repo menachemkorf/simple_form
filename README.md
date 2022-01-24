@@ -11,6 +11,10 @@ Valid posts are stored in a mysql database, and files are uploaded to the server
 
 The form is built with Bootstrap 5, the client side validation is done with jQuery, there are no PHP dependencies.
 
+## Requirements 
+
+- PHP 7.4
+- MySQL 
 
 ## Install
 
@@ -18,6 +22,7 @@ The form is built with Bootstrap 5, the client side validation is done with jQue
 - import sql file to new mysql database
 - `mv sample-config.php config.php`
 - edit config.php with correct db credentials 
+- You can serve the app with any web server, (to use php built in dev server run `php -S localhost:8000`)
 
 **User:** admin
 **Pass:** password
