@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # Database: simple_form
-# Generation Time: 2022-01-23 14:45:43 +0000
+# Generation Time: 2022-01-25 00:18:21 +0000
 # ************************************************************
 
 
@@ -31,10 +31,19 @@ CREATE TABLE `posts` (
   `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+
+INSERT INTO `posts` (`id`, `user_id`, `message`, `file_name`)
+VALUES
+	(10,1,'dgfhjk ghj','45ac6bbd82ac3aa034297e4734327db2.jpg'),
+	(11,1,'fghjkl;','45ac6bbd82ac3aa034297e4734327db2.jpg');
+
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table users
